@@ -1,8 +1,9 @@
 //Najeeb Patoana
 const express = require('express')
 const db = require('./db.js')
+require('dotenv').config();
 const bodyParser = require('body-parser')
-const port = 3000;
+
 const app = express();
 app.use(bodyParser.json());
 const person_routers=require('./routes/person_routes.js')
@@ -15,9 +16,10 @@ app.use('/person',person_routers)
     res.render("index" )
 });
 
+const PORT=process.env.PORT || 3000;
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 }).on('error', (err) => {
   console.error('Error starting server:', err);
 });
