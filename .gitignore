@@ -1,0 +1,2 @@
+#ignore node_modules because they will be automaticcaly installed when packgae.json is run by npm i 
+node_modules/
